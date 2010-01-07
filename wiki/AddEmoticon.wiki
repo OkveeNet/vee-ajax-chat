@@ -1,5 +1,5 @@
 #labels Phase-Implementation
-#การเพิ่ม emoticon/smiley ด้วยตัวเอง
+#add emoticon by yourself 
 
 = การเพิ่ม emoticon/smiley =
 
