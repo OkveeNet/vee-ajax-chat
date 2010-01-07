@@ -32,8 +32,8 @@ copy บรรทัดโค้ดข้างบนมาวางในบร
 <br />
 ตัวอย่าง<br />
 จะใส่อักษรภาพ sad<br />
-$output = str_replace(":(",html::img(_W_ROOT_.'images/emo/sad.gif','0',':(',array('title'=>'sad')),$output);<br />
+{{{$output = str_replace(":(",html::img(_W_ROOT_.'images/emo/sad.gif','0',':(',array('title'=>'sad')),$output);}}}<br />
 จากตัวอย่างข้างบน ถ้าอัพโหลดอักษรภาพไว้ใน images/emo และนามสกุลไฟล์ถูกต้อง จะพบว่าเมื่อพิมพ์ :( จะกลายเป็นรูปภาพทันที<br />
 หรือจะใส่ภาพ happy<br />
-$output = str_replace(":D",html::img(_W_ROOT_.'images/emo/happy.gif','0',':D',array('title'=>'happy')),$output);<br />
+{{{$output = str_replace(":D",html::img(_W_ROOT_.'images/emo/happy.gif','0',':D',array('title'=>'happy')),$output);}}}<br />
 ก็จะออกมาเป็นภาพยิ้มตามภาพที่อัปโหลดไว้
