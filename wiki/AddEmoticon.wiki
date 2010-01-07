@@ -19,8 +19,8 @@
 copy บรรทัดโค้ดข้างบนมาวางในบรรทัดใหม่นี้<br />
 
 ทีนี้เรามาทำความเข้าใจกันก่อนว่าอะไรเป็นอะไร<br />
-||$output = ||str_replace(||":)"||,html::img(||_W_ROOT_.'images/emo/smile.gif','0',':)'||,array('title'=>'smile'))||,$message||);||
-||$output = ||str_replace(||"ตัวพิมพ์ยิ้ม"||,html::img(||_W_ROOT_.'images/emo/ชื่อรูปยิ้ม.gif','0','ตัวพิมพ์ยิ้ม'||,array('title'=>'ชื่อภาพ'))||,เปลี่ยนคำว่า $message ไปเป็น $output||);||
+||$output = ||str_replace(||":)"||,html::img(||{{{_W_ROOT_.'images/emo/smile.gif','0',':)'}}}||,array('title'=>'smile'))||,$message||);||
+||$output = ||str_replace(||"ตัวพิมพ์ยิ้ม"||,html::img(||{{{_W_ROOT_.'images/emo/ชื่อรูปยิ้ม.gif','0','ตัวพิมพ์ยิ้ม'}}}||,array('title'=>'ชื่อภาพ'))||,เปลี่ยนคำว่า $message ไปเป็น $output||);||
 
 *ไฟล์ emoticon เอาไว้ไหน?*<br />
 ไฟล์ภาพ emoticon จะเอาไว้ที่ images/emo/ เท่านั้น<br />
