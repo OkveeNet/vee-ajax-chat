@@ -6,7 +6,7 @@
 แตกไฟล์ออกมาแล้วไว้ใน folder เช่น /ajax-chat
 เปิดไฟล์ /includes/config.inc.php
 แก้ไขสิ่งต่างๆที่จำเป็นดังนี้
-`$cfg['chat']['status']` เป็น on เพื่อใช้งานจริง
+`$cfg['chat']['status']` เป็น on เพื่อใช้งานจริง<br>
 `$cfg['site']['name']` กำหนดชื่อเว็บของคุณ
 `$cfg['site']['password']` กำหนด password สำหรับการเข้าเป็น admin ในห้องแชท
 `$cfg['mysql']['server']` กำหนด server ของ mysql เช่น 192.168.0.1 หรือปกติจะเป็น localhost
@@ -34,13 +34,19 @@ import ไฟล์ ajax_chat_structure.sql ผ่านทาง phpmyadmin
 
 เลื่อนลงไปดูที่ `public function emoticon($message)`
 ไปที่ท้ายสุดของบรรทัดนี้ 
-```{{{$output = str_replace(":)",html::img(_W_ROOT_.'images/emo/smile.gif','0',':)',array('title'=>'smile')),$message);}}}```
+```
+{{{$output = str_replace(":)",html::img(_W_ROOT_.'images/emo/smile.gif','0',':)',array('title'=>'smile')),$message);}}}
+```
 กด enter เพิ่มบรรทัดใหม่
 copy บรรทัดโค้ดข้างบนมาวางในบรรทัดใหม่นี้
 
 ทีนี้เรามาทำความเข้าใจกันก่อนว่าอะไรเป็นอะไร
-```||$output = ||str_replace(||":)"||,html::img(||{{{_W_ROOT_.'images/emo/smile.gif','0',':)'}}}||,array('title'=>'smile'))||,$message||);||```
-```||$output = ||str_replace(||"ตัวพิมพ์ยิ้ม"||,html::img(||{{{_W_ROOT_.'images/emo/ชื่อรูปยิ้ม.gif','0','ตัวพิมพ์ยิ้ม'}}}||,array('title'=>'ชื่อภาพ'))||,เปลี่ยนคำว่า $message ไปเป็น $output||);||```
+```
+||$output = ||str_replace(||":)"||,html::img(||{{{_W_ROOT_.'images/emo/smile.gif','0',':)'}}}||,array('title'=>'smile'))||,$message||);||
+```
+```
+||$output = ||str_replace(||"ตัวพิมพ์ยิ้ม"||,html::img(||{{{_W_ROOT_.'images/emo/ชื่อรูปยิ้ม.gif','0','ตัวพิมพ์ยิ้ม'}}}||,array('title'=>'ชื่อภาพ'))||,เปลี่ยนคำว่า $message ไปเป็น $output||);||
+```
 
 **ไฟล์ emoticon เอาไว้ไหน?**
  ไฟล์ภาพ emoticon จะเอาไว้ที่ images/emo/ เท่านั้น
@@ -51,8 +57,12 @@ copy บรรทัดโค้ดข้างบนมาวางในบร
 
 ตัวอย่าง
 จะใส่อักษรภาพ sad
-```{{{$output = str_replace(":(",html::img(_W_ROOT_.'images/emo/sad.gif','0',':(',array('title'=>'sad')),$output);}}}```
+```
+{{{$output = str_replace(":(",html::img(_W_ROOT_.'images/emo/sad.gif','0',':(',array('title'=>'sad')),$output);}}}
+```
 จากตัวอย่างข้างบน ถ้าอัพโหลดอักษรภาพไว้ใน images/emo และนามสกุลไฟล์ถูกต้อง จะพบว่าเมื่อพิมพ์ :( จะกลายเป็นรูปภาพทันที
 หรือจะใส่ภาพ happy
-```{{{$output = str_replace(":D",html::img(_W_ROOT_.'images/emo/happy.gif','0',':D',array('title'=>'happy')),$output);}}}```
+```
+{{{$output = str_replace(":D",html::img(_W_ROOT_.'images/emo/happy.gif','0',':D',array('title'=>'happy')),$output);}}}
+```
 ก็จะออกมาเป็นภาพยิ้มตามภาพที่อัปโหลดไว้
