@@ -33,26 +33,25 @@ import ไฟล์ ajax_chat_structure.sql ผ่านทาง phpmyadmin
 การแปลงข้อความเป็นอักษรภาพนั้น คำสั่งจะอยู่ในไฟล์ classes/addon.php ให้เปิดไฟล์นี้ขึ้นมา
 
 เลื่อนลงไปดูที่ `public function emoticon($message)`
-ไปที่ท้ายสุดของบรรทัดนี้ {{{$output = str_replace(":)",html::img(_W_ROOT_.'images/emo/smile.gif','0',':)',array('title'=>'smile')),$message);}}}<br />
-กด enter เพิ่มบรรทัดใหม่<br />
-copy บรรทัดโค้ดข้างบนมาวางในบรรทัดใหม่นี้<br />
+ไปที่ท้ายสุดของบรรทัดนี้ `{{{$output = str_replace(":)",html::img(_W_ROOT_.'images/emo/smile.gif','0',':)',array('title'=>'smile')),$message);}}}`
+กด enter เพิ่มบรรทัดใหม่
+copy บรรทัดโค้ดข้างบนมาวางในบรรทัดใหม่นี้
 
-ทีนี้เรามาทำความเข้าใจกันก่อนว่าอะไรเป็นอะไร<br />
-||$output = ||str_replace(||":)"||,html::img(||{{{_W_ROOT_.'images/emo/smile.gif','0',':)'}}}||,array('title'=>'smile'))||,$message||);||
-||$output = ||str_replace(||"ตัวพิมพ์ยิ้ม"||,html::img(||{{{_W_ROOT_.'images/emo/ชื่อรูปยิ้ม.gif','0','ตัวพิมพ์ยิ้ม'}}}||,array('title'=>'ชื่อภาพ'))||,เปลี่ยนคำว่า $message ไปเป็น $output||);||
+ทีนี้เรามาทำความเข้าใจกันก่อนว่าอะไรเป็นอะไร
+`||$output = ||str_replace(||":)"||,html::img(||{{{_W_ROOT_.'images/emo/smile.gif','0',':)'}}}||,array('title'=>'smile'))||,$message||);||`
+`||$output = ||str_replace(||"ตัวพิมพ์ยิ้ม"||,html::img(||{{{_W_ROOT_.'images/emo/ชื่อรูปยิ้ม.gif','0','ตัวพิมพ์ยิ้ม'}}}||,array('title'=>'ชื่อภาพ'))||,เปลี่ยนคำว่า $message ไปเป็น $output||);||`
 
-*ไฟล์ emoticon เอาไว้ไหน?*<br />
-ไฟล์ภาพ emoticon จะเอาไว้ที่ images/emo/ เท่านั้น<br />
+**ไฟล์ emoticon เอาไว้ไหน?**
+ ไฟล์ภาพ emoticon จะเอาไว้ที่ images/emo/ เท่านั้น
 
 
-*ข้อควรระวัง*<br />
-ตรงคำว่า $message ในโค้ดแรกของ function emoticon นั้นไม่ต้องเปลี่ยน<br />
-เปลี่ยนเฉพาะบรรทัดต่อๆมาเท่านั้น<br />
-<br />
-ตัวอย่าง<br />
-จะใส่อักษรภาพ sad<br />
-{{{$output = str_replace(":(",html::img(_W_ROOT_.'images/emo/sad.gif','0',':(',array('title'=>'sad')),$output);}}}<br />
-จากตัวอย่างข้างบน ถ้าอัพโหลดอักษรภาพไว้ใน images/emo และนามสกุลไฟล์ถูกต้อง จะพบว่าเมื่อพิมพ์ :( จะกลายเป็นรูปภาพทันที<br />
-หรือจะใส่ภาพ happy<br />
-{{{$output = str_replace(":D",html::img(_W_ROOT_.'images/emo/happy.gif','0',':D',array('title'=>'happy')),$output);}}}<br />
+**ข้อควรระวัง**
+ตรงคำว่า `$message` ในโค้ดแรกของ `function emoticon` นั้นไม่ต้องเปลี่ยน เปลี่ยนเฉพาะบรรทัดต่อๆมาเท่านั้น
+
+ตัวอย่าง
+จะใส่อักษรภาพ sad
+`{{{$output = str_replace(":(",html::img(_W_ROOT_.'images/emo/sad.gif','0',':(',array('title'=>'sad')),$output);}}}`
+จากตัวอย่างข้างบน ถ้าอัพโหลดอักษรภาพไว้ใน images/emo และนามสกุลไฟล์ถูกต้อง จะพบว่าเมื่อพิมพ์ :( จะกลายเป็นรูปภาพทันที
+หรือจะใส่ภาพ happy
+`{{{$output = str_replace(":D",html::img(_W_ROOT_.'images/emo/happy.gif','0',':D',array('title'=>'happy')),$output);}}}`
 ก็จะออกมาเป็นภาพยิ้มตามภาพที่อัปโหลดไว้
